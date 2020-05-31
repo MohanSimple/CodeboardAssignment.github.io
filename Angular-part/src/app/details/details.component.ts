@@ -10,16 +10,23 @@ import { Patient } from '../patient';
 })
 export class DetailsComponent implements OnInit {
 
-  patients : Observable<Patient[]>
+  patients =[]
   constructor(private patientService : PatientServiceService) { }
 
   ngOnInit(): void {
     this.patientDetails();
   }
-
+  i:number;
   patientDetails(){
-    this.patientService.getAllDetails().subscribe(response => this.patients = response);
-    console.log(this.patients);
-  }s
-
+    this.patientService.getAllDetails().subscribe(data => {
+    for(let j=0; j<data.length ;j++){
+      if(this.check(data[j])===true){
+        this.patients.push(data[j]);
+    }
+  }
+  });
+  }
+  check(array){
+    return array.isDeleted==="0";
+  }
 }

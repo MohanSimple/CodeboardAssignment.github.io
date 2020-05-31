@@ -1,6 +1,7 @@
 package com.codeboard.crud.patient;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,8 +29,9 @@ public class PatientController {
 	@GetMapping("/patients")
 	public ResponseEntity<List<Patient>> getAllDetails(){
 		List<Patient> list = new ArrayList<>();
+		int i=0;
 		try {
-		patientRepository.findAll().forEach(list :: add);
+		patientRepository.findAll().forEach(list::add);
 		if(list.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}

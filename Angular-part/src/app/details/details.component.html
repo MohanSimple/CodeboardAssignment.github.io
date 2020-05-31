@@ -1,8 +1,9 @@
-<div >
 <br>
+<div class="container" style="background-image: linear-gradient(-15deg,lavender,darkcyan);">
 <br>
-    <div *ngFor="let patient of patients" >
-        <div align="center" ><u>Id</u> : {{patient.id}}<br>
+    <div *ngFor="let patient of patients " >
+        <div align="center">
+            <u>Id</u> : {{patient.id}}<br>
             <u>Name</u> : {{patient.name}}<br>
         <u>Status</u> : {{patient.isDeleted}}</div>
         <br>

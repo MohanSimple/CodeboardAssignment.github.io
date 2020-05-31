@@ -1,17 +1,26 @@
-<div class="container sm-3">
-    <h3>Delete Patient</h3>
+<div class="container sm-6">
+    <h4>Delete Patient</h4>
 <form action="" (ngSubmit)="onSubmitDlt()" >
-    <input type="text" [(ngModel)]="deletePatient" name="patientId">
-    <br><input type="submit" class="btn btn-danger" >
-</form>
+    <div class="input-group">
+    <input type="text" [(ngModel)]="updatePatient"  class="form-control" placeholder="enter id" name="patientId">
+    <br>
+    <br>
+    <input type="submit" class="btn btn-danger" >
 </div>
-
-<div class="container sm-3">
-    <h3>Add Patient</h3>
-<form action="" (ngSubmit)="onSubmitAdd()" class="container-sm-3">
-    <input type="text" [(ngModel)]="newPatientName" name="newPatientId">
-    <br><input type="text" [(ngModel)]="newPatientStaus" name="newPatientStatus"><span>Optional</span>
-    <br><input type="submit" class="btn btn-success" >
 </form>
-<div [hidden]="!submitted">Submitted Succesfully</div>
+<div [hidden]="!deleted">Deleted Succesfully</div>
+</div>
+<br><br>
+
+<div class="container sm-6">
+    <h4>Add Patient</h4>
+<form action="" (ngSubmit)="onSubmitAdd()">
+    <div class="input-group">
+    <input type="text" [(ngModel)]="newPatientName" class="form-control" placeholder="enter name" name="newPatientId">
+    <br>
+    <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+</div>  
+</form>
+<div [hidden]="!submitted" [style.font]="italic">Submitted Succesfully</div>
 </div>
